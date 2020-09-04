@@ -72,7 +72,7 @@ public class compon_servlet extends HttpServlet {
 		System.out.println("555");
 //		out.print("<script language=javascript>"+"javascript:history.go(-1);</script>");
 		System.out.println("666");
-		request.getRequestDispatcher("../ch00/compon.jsp").include(request,response);
+		request.getRequestDispatcher("../ch01/compon.jsp").include(request,response);
 		out.flush();
 		out.close();
 		

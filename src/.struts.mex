@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="cn.edu.hezeu" location="0,0" size="0,0">
+    <action name="LoginAction" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="show.jsp" />
+      </result>
+      <result name="failure" />
+    </action>
+  </package>
+  <webResource name="show.jsp" path="/show.jsp" location="100,205" size="150,55" />
+  <webResource name="show.jsp" path="../show.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

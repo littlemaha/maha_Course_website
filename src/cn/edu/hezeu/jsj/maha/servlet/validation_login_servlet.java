@@ -57,8 +57,7 @@ public class validation_login_servlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
-		HttpSession session = request.getSession();
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		System.out.println("1");
 		String userName = request.getParameter("userName");
@@ -66,11 +65,10 @@ public class validation_login_servlet extends HttpServlet {
 		
 		validation_login_javaBean va_login = new validation_login_javaBean();
 		if(va_login.isUser(userName, password)){
-			session.setAttribute("userName" , "马哈");//此处 马哈 为密码正确后从数据库得到的  
-			out.print("<script language='javascript'>alert('登录成功');location='../ch00/main.jsp';</script>");
+			out.print("<script language='javascript'>alert('登录成功');location='../ch01/main.jsp';</script>");
 //			request.getRequestDispatcher("maha/main.jsp");
 		} else {
-			out.print("<script language='javascript'>alert('登录失败');location='../ch00/login_imitate.jsp';</script>");
+			out.print("<script language='javascript'>alert('登录失败');location='../ch01/login_imitate.jsp';</script>");
 		}
 		
 		out.flush();

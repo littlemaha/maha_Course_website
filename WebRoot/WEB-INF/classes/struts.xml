@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="cn.edu.hezeu.jsj.maha.javaBean" namespace="/ch01" extends="struts-default">
+		<action name="loginAction" class="cn.edu.hezeu.jsj.maha.javaBean.LoginAction" method="execute">
+			<result name="success" type="dispatcher">/show.jsp</result>
+			<result name="failure" type="redirect">/login.jsp</result>
+		</action>
+	</package>
+</struts>
+
+
