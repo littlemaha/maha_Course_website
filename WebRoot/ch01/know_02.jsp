@@ -1,7 +1,17 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-1 导包
-2 配置web.xml
+<!-- 模板要求：
+				目录id结构为id="*-A" 
+				内容id结构为id="text-A"
+				id不可为''
+-->
 
+<div class="nav">
+	<div id="navigation-one" onclick="isShow(this.id)">1 导包</div>
+	<div id="navigation-two" onclick="isShow(this.id)">2 配置web.xml</div>
+</div>
+
+<div id="text-one" style="display: none">
+<xmp>
 1	要开发Struts2.3.1.2程序最少需要引入的jar如下：
 struts2-core-2.3.1.2.jar：Struts2框架的核心类库。
 xwork-core-2.3.1.2.jar：XWork类库，Struts2在其上构建。
@@ -13,8 +23,11 @@ commons-io-2.0.1.jar：
 commons-lang-2.5.jar或commons-lang3-3.1.jar：
 javassist-3.11.0.GA.jar：它是一个编辑Java字节码的类库，Java编程助手，使得Java字节码操纵简单。
 附下载最新的struts2地址：http://struts.apache.org/download
+</xmp>
+</div>
 
-
+<div id="text-two" style="display: none">
+<xmp>
 2	
  <filter>
   <filter-name>Struts2</filter-name>
@@ -28,6 +41,78 @@ javassist-3.11.0.GA.jar：它是一个编辑Java字节码的类库，Java编程�
 上面的写法是struts2.1.3以后的版本的写法，如果需使用该版本之前的则需要
 <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>（只不过该种写法在struts2.1.3以后已经标注为过时了）替换上面的<filter-class>标签的值。
 2、在StrutsPrepareAndExecuteFilter的init()方法中将会读取类路径下默认的配置文件struts.xml完成初始化操作。这样配置文件中信息就会以JavaBean的形式放在内存中，以后就不用重新读取配置文件struts.xml了。
- 
- 
- 
+</xmp>
+</div>
+
+<script>
+	var ID='';
+	
+	function isShow(id){
+		//console.log(ID);
+		//console.log(id);
+		//console.log(id.split('-')[1]);
+		//console.log('text-'+id.split('-')[1]);
+		if(ID!=''){
+		document.getElementById(ID).style.display="none";//隐藏
+		}
+		
+		document.getElementById('text-'+id.split('-')[1]).style.display = '';
+		ID='text-'+id.split('-')[1];
+	}
+</script>
+
+
+<style>
+xmp {
+width:100%;
+ white-space:pre-wrap;
+ white-space:-moz-pre-wrap;
+ white-space:-pre-wrap;
+ white-space:-o-pre-wrap;
+ word-wrap:break-word;
+ border:red solid 1px;
+}
+	.nav {
+		display: table;
+	}
+
+	#navigation-one {
+		width: 100px;
+		height: 50px;
+		border:1px solid red;
+		float:left;
+	}
+	
+	#navigation-two {
+		width: 100px;
+		height: 50px;
+		border:1px solid red;
+		float:left;
+	}
+	
+	#text-one {
+		border:1px solid green;
+		
+		 
+   
+    
+		
+	}
+	
+	#text-two {
+	border:1px solid green;
+	
+	
+    
+    
+	}
+</style>
+
+
+
+
+
+
+
+
+
