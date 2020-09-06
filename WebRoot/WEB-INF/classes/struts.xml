@@ -3,10 +3,20 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="cn.edu.hezeu.jsj.maha.javaBean" namespace="/ch01" extends="struts-default">
+	<package name="cn.edu.hezeu.jsj" namespace="/home" extends="struts-default">
 		<action name="loginAction" class="cn.edu.hezeu.jsj.maha.javaBean.LoginAction" method="execute">
 			<result name="success" type="redirect">/main.jsp</result>
 			<result name="failure" type="dispatcher">/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="cn.edu.hezeu.jsjs" namespace="/ch01" extends="struts-default">
+		<action name="loginActions" class="cn.edu.hezeu.jsj.maha.ch01.action.simulation_login" method="execute">
+			<result name="success" type="redirect">/ch01/simulation_login_ok.jsp</result>
+			<result name="failure" type="redirect">/ch01/simulation_login.jsp</result>
+		</action>
+		<action name="loginActionss" class="cn.edu.hezeu.jsj.maha.ch01.action.simulation_compon" method="execute">
+			<result name="ass" type="dispatcher">/ch01/simulation_compon.jsp</result>
 		</action>
 	</package>
 </struts>

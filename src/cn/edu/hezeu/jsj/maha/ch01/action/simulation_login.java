@@ -1,6 +1,6 @@
-package cn.edu.hezeu.jsj.maha.javaBean;
+package cn.edu.hezeu.jsj.maha.ch01.action;
 
-public class LoginAction {
+public class simulation_login {
 	private String userName;
 	private String password;
 	private String isOk;
@@ -33,6 +33,5 @@ public class LoginAction {
 	public void setIsOk(String isOk) {
 		this.isOk = isOk;
 	}
-	
 
 }
